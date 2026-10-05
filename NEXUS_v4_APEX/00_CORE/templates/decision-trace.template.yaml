@@ -1,0 +1,8 @@
+decisions:
+  - id: "<timestamp>-<seq>"
+    engine: "<ENGINE>"
+    decision: "<what was decided>"
+    why: "<1-2 lines>"
+    confidence: "DEFINITIVE|RECOMMENDED|EXPERIMENTAL"
+    sources: ["<source>"]
+

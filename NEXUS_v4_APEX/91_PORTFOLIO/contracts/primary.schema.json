@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "91_PORTFOLIOPrimaryArtifact",
+  "type": "object",
+  "required": [
+    "engine",
+    "version"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string",
+      "const": "91_PORTFOLIO"
+    },
+    "version": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+overridable:
+  scalars:
+    - compressionMode
+  arrays-append:
+    - persistent-facts
+locked:
+  - conflictPolicy
+
+persistent-facts: []
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []
+

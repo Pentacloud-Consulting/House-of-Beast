@@ -1,0 +1,27 @@
+registryVersion: 1
+
+plugins:
+  caveman:
+    kind: npm
+    package: caveman
+    commands:
+      compress: "caveman-compress"
+      shrink: "caveman-shrink"
+    adapter: "0P_PLUGINS/adapters/caveman.mjs"
+    nativeFallback: "0P_PLUGINS/native-lite/caveman-lite.mjs"
+    healthCheck: "0P_PLUGINS/health/caveman.health.mjs"
+
+  codeReviewGraph:
+    kind: pip
+    package: code-review-graph
+    adapter: "0P_PLUGINS/adapters/code-review-graph.mjs"
+    nativeFallback: "0P_PLUGINS/native-lite/code-review-graph-lite.mjs"
+    healthCheck: "0P_PLUGINS/health/code-review-graph.health.mjs"
+
+  claudeCapsuleKit:
+    kind: npm
+    package: claude-capsule-kit
+    adapter: "0P_PLUGINS/adapters/claude-capsule-kit.mjs"
+    nativeFallback: "0P_PLUGINS/native-lite/claude-capsule-kit-lite.mjs"
+    healthCheck: "0P_PLUGINS/health/claude-capsule-kit.health.mjs"
+

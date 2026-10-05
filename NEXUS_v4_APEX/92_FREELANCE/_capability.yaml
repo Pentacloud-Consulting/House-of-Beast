@@ -1,0 +1,9 @@
+engine: 92_FREELANCE
+purpose: "Operator context: freelance workflows and artifacts (legacy from v3)."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

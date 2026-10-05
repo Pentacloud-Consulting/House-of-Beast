@@ -1,0 +1,17 @@
+engine: 91_PORTFOLIO
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: portfolioConfig
+    contract: 91_PORTFOLIO/contracts/portfolio-config.schema.json
+  - id: caseStudySpec
+    contract: 91_PORTFOLIO/contracts/case-study.schema.json
+exports: []

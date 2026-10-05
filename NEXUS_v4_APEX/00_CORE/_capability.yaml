@@ -1,0 +1,10 @@
+engine: 00_CORE
+purpose: "Orchestrate engines with contract validation and tier-aware routing."
+whenToInvoke:
+  - "Always at session start (routes the work)."
+provides:
+  - "Routing matrix (intent → engine chain)."
+  - "Contract validation and quality gate execution."
+hardRules:
+  - "Never reference cross-engine internal files (PATH-05)."
+  - "Use invoke language for engines (REF-03)."

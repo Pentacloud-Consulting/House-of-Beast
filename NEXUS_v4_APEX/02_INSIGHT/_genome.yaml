@@ -1,0 +1,19 @@
+engine: 02_INSIGHT
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: eventTaxonomy
+    contract: 02_INSIGHT/contracts/event-taxonomy.schema.json
+  - id: experimentPlan
+    contract: 02_INSIGHT/contracts/ab-testing-plan.schema.json
+  - id: croChecklist
+    contract: 02_INSIGHT/contracts/cro-checklist.schema.json
+exports: []

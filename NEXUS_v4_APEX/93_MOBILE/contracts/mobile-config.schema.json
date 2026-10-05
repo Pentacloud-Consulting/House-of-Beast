@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MobileConfig",
+  "type": "object",
+  "required": ["engine", "version", "platforms", "notWebNotice"],
+  "properties": {
+    "engine": { "type": "string", "const": "93_MOBILE" },
+    "version": { "type": "string" },
+    "platforms": { "type": "array", "items": { "type": "string", "enum": ["ios", "android"] }, "minItems": 1 },
+    "notWebNotice": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

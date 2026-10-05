@@ -1,0 +1,9 @@
+engine: 09_BUILD
+purpose: "Implementation engine: Next.js 15 App Router/RSC patterns, commerce/email/i18n/monorepo guidance."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

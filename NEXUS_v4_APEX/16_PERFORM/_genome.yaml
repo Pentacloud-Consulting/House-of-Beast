@@ -1,0 +1,19 @@
+engine: 16_PERFORM
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: cwvBudget
+    contract: 16_PERFORM/contracts/cwv-budget.schema.json
+  - id: cachingStrategy
+    contract: 16_PERFORM/contracts/caching.schema.json
+  - id: speculationRulesPlan
+    contract: 16_PERFORM/contracts/speculation-rules.schema.json
+exports: []

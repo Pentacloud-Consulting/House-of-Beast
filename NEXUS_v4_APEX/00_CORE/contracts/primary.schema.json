@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "00_COREPrimaryArtifact",
+  "type": "object",
+  "required": [
+    "engine",
+    "version"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string",
+      "const": "00_CORE"
+    },
+    "version": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

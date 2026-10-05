@@ -1,0 +1,24 @@
+engine: 03_PALETTE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: colorTokens
+    contract: 03_PALETTE/contracts/color-tokens.schema.json
+  - id: a11yContrastReport
+    contract: 03_PALETTE/contracts/contrast-report.schema.json
+  - id: harmonyPlan
+    contract: 03_PALETTE/contracts/harmony-plan.schema.json
+  - id: gradientRules
+    contract: 03_PALETTE/contracts/gradient-rules.schema.json
+exports:
+  - id: tokensCss
+    via: 03_PALETTE/templates/tokens-color.css
+

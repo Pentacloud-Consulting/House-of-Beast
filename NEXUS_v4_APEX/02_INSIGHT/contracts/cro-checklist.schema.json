@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CROChecklist",
+  "type": "object",
+  "required": ["engine", "version", "aboveTheFold", "ctaRules"],
+  "properties": {
+    "engine": { "type": "string", "const": "02_INSIGHT" },
+    "version": { "type": "string" },
+    "aboveTheFold": { "type": "array", "items": { "type": "string" } },
+    "ctaRules": { "type": "array", "items": { "type": "string" } },
+    "measurementNotes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

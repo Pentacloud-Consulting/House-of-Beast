@@ -1,0 +1,14 @@
+engine: 0A_ANTISLOP
+purpose: "Preventive guardrails: stop slop, injection, unsafe changes, and rule violations."
+hooks:
+  - SessionStart
+  - PreToolUse
+  - PostToolUse
+  - PreCompact
+  - SessionEnd
+  - Stop
+blocks:
+  - "Prompt injection attempts"
+  - "Scope reduction (dropping requirements)"
+  - "Cross-engine path traversal"
+  - "BMAD Layer-1 leakage"

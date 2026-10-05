@@ -1,0 +1,7 @@
+{
+  "events": [
+    { "name": "page_view", "properties": ["path", "referrer"] },
+    { "name": "cta_click", "properties": ["cta_id", "location"] }
+  ]
+}
+

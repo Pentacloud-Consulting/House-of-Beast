@@ -1,0 +1,10 @@
+engine: 90_MEMORY
+purpose: "Persist project context, short logs, and long-lived threads with conflict-safe writes."
+artifacts:
+  - nexus.project.yaml
+  - .nexus/memory.db
+  - .nexus/session-handoff.md
+rules:
+  - "Never silently overwrite memory."
+  - "Always load critical-implementation-rules into downstream engines."
+

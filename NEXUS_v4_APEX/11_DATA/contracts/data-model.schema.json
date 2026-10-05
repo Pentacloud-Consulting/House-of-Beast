@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DataModel",
+  "type": "object",
+  "required": ["engine", "version", "normalization", "entities"],
+  "properties": {
+    "engine": { "type": "string", "const": "11_DATA" },
+    "version": { "type": "string" },
+    "normalization": { "type": "string", "enum": ["3NF"] },
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "fields", "foreignKeys"],
+        "properties": {
+          "name": { "type": "string" },
+          "fields": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "foreignKeys": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "denormalizations": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

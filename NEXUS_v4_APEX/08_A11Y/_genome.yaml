@@ -1,0 +1,19 @@
+engine: 08_A11Y
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: a11yChecklist
+    contract: 08_A11Y/contracts/a11y-checklist.schema.json
+  - id: focusManagementPlan
+    contract: 08_A11Y/contracts/focus-management.schema.json
+  - id: ariaPatterns
+    contract: 08_A11Y/contracts/aria-patterns.schema.json
+exports: []

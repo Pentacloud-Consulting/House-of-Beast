@@ -1,0 +1,8 @@
+plugins:
+  caveman:
+    enabled: false
+  codeReviewGraph:
+    enabled: false
+  claudeCapsuleKit:
+    enabled: false
+

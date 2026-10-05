@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ObservabilityPlan",
+  "type": "object",
+  "required": ["engine", "version", "pillars", "tracePropagation"],
+  "properties": {
+    "engine": { "type": "string", "const": "20_OBSERVE" },
+    "version": { "type": "string" },
+    "pillars": { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+    "tracePropagation": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

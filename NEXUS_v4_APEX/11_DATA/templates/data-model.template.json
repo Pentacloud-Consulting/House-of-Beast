@@ -1,0 +1,6 @@
+{
+  "entities": [
+    { "name": "User", "fields": ["id", "email"] }
+  ]
+}
+

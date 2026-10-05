@@ -1,0 +1,9 @@
+engine: 20_OBSERVE
+purpose: "Observability engine: OTel, RUM, synthetics, SLOs, PII scrubbing, incident loops."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

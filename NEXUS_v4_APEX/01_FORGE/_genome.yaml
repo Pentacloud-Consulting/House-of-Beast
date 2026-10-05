@@ -1,0 +1,21 @@
+engine: 01_FORGE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: prd
+    contract: 01_FORGE/contracts/prd.schema.json
+  - id: acceptanceCriteria
+    contract: 01_FORGE/contracts/acceptance-criteria.schema.json
+  - id: informationArchitecture
+    contract: 01_FORGE/contracts/ia.schema.json
+  - id: navigationDecision
+    contract: 01_FORGE/contracts/nav-decision.schema.json
+exports: []

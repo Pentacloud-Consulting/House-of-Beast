@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SpeculationRulesPlan",
+  "type": "object",
+  "required": ["engine", "version", "enabled", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "16_PERFORM" },
+    "version": { "type": "string" },
+    "enabled": { "type": "boolean" },
+    "rules": { "type": "array", "items": { "type": "string" }, "minItems": 2 }
+  },
+  "additionalProperties": false
+}
+

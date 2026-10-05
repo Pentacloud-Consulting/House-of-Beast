@@ -1,0 +1,26 @@
+{
+  "name": "nexus-v4-apex",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "gate": "node scripts/nexus-gate.mjs",
+    "validate:contracts": "node scripts/validate-contracts.mjs --strict --phase phase3",
+    "validate:contracts:inference": "node scripts/validate-contracts-inference.mjs --strict",
+    "engine:install": "node scripts/engine-install.mjs",
+    "engine:uninstall": "node scripts/engine-uninstall.mjs",
+    "engine:deps": "node scripts/engine-deps.mjs",
+    "engine:describe": "node scripts/engine-describe.mjs",
+    "plugin:install": "node scripts/plugin-install.mjs",
+    "tokens:audit": "node scripts/audit-tokens.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "diff": "^8.0.2",
+    "yaml": "^2.8.1"
+  }
+}
+

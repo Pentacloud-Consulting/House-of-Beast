@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "05_MOTIONPrimaryArtifact",
+  "type": "object",
+  "required": [
+    "engine",
+    "version"
+  ],
+  "properties": {
+    "engine": {
+      "type": "string",
+      "const": "05_MOTION"
+    },
+    "version": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

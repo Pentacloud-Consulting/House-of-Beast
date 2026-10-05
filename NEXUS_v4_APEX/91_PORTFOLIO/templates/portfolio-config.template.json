@@ -1,0 +1,7 @@
+{
+  "routes": ["/", "/work/[slug]", "/about", "/contact"],
+  "navMaxItems": 5,
+  "ctaPrimary": "View Work",
+  "ctaSecondary": "Contact"
+}
+

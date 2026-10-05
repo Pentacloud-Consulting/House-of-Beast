@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RestApiContract",
+  "type": "object",
+  "required": ["engine", "version", "versioning", "resources"],
+  "properties": {
+    "engine": { "type": "string", "const": "10_API" },
+    "version": { "type": "string" },
+    "versioning": {
+      "type": "object",
+      "required": ["strategy", "basePath"],
+      "properties": {
+        "strategy": { "type": "string", "enum": ["url"] },
+        "basePath": { "type": "string", "pattern": "^/api/v[0-9]+/" }
+      },
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "path", "methods"],
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "methods": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

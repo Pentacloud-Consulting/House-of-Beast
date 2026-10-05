@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ErrorMonitoringPlan",
+  "type": "object",
+  "required": ["engine", "version", "tooling", "piiScrubRule"],
+  "properties": {
+    "engine": { "type": "string", "const": "20_OBSERVE" },
+    "version": { "type": "string" },
+    "tooling": { "type": "string" },
+    "piiScrubRule": { "type": "string" },
+    "alerts": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

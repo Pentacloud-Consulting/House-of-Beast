@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ErrorEnvelope",
+  "type": "object",
+  "required": ["engine", "version", "successShape", "errorShape", "statusCodes"],
+  "properties": {
+    "engine": { "type": "string", "const": "10_API" },
+    "version": { "type": "string" },
+    "successShape": { "type": "string" },
+    "errorShape": { "type": "string" },
+    "statusCodes": { "type": "array", "items": { "type": "integer" }, "minItems": 5 }
+  },
+  "additionalProperties": false
+}
+

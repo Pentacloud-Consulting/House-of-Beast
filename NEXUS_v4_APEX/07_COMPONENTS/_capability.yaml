@@ -1,0 +1,9 @@
+engine: 07_COMPONENTS
+purpose: "Component system: anatomy, slots, states, loading/error designs, token integration."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

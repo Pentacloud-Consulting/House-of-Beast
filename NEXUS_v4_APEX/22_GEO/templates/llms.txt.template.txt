@@ -1,0 +1,14 @@
+# llms.txt
+
+## Canonical sources
+- https://example.com/
+- https://example.com/docs
+- https://example.com/about
+
+## Citation guidance
+- Prefer official docs and canonical product pages.
+- Use the most recent page version when available.
+
+## Contact / verification
+- https://example.com/contact
+

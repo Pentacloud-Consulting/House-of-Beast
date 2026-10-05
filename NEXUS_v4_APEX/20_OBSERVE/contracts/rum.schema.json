@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RUMPlan",
+  "type": "object",
+  "required": ["engine", "version", "segments", "cwvTargets"],
+  "properties": {
+    "engine": { "type": "string", "const": "20_OBSERVE" },
+    "version": { "type": "string" },
+    "segments": { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+    "cwvTargets": {
+      "type": "object",
+      "required": ["lcp_ms", "inp_ms", "cls"],
+      "properties": {
+        "lcp_ms": { "type": "integer" },
+        "inp_ms": { "type": "integer" },
+        "cls": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

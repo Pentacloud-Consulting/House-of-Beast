@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NavigationDecision",
+  "type": "object",
+  "required": ["engine", "version", "pattern", "rationale", "constraints"],
+  "properties": {
+    "engine": { "type": "string", "const": "01_FORGE" },
+    "version": { "type": "string" },
+    "pattern": { "type": "string" },
+    "rationale": { "type": "string" },
+    "constraints": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

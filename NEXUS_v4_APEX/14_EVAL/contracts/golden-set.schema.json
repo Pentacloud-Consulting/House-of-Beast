@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GoldenSet",
+  "type": "object",
+  "required": ["engine", "version", "cases"],
+  "properties": {
+    "engine": { "type": "string", "const": "14_EVAL" },
+    "version": { "type": "string" },
+    "cases": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "input", "expected"],
+        "properties": {
+          "id": { "type": "string" },
+          "input": { "type": "string" },
+          "expected": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

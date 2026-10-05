@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FontLoadingPlan",
+  "type": "object",
+  "required": ["engine", "version", "families", "strategy"],
+  "properties": {
+    "engine": { "type": "string", "const": "04_TYPE" },
+    "version": { "type": "string" },
+    "families": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "weights"],
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string", "enum": ["display", "body", "mono"] },
+          "weights": { "type": "array", "items": { "type": "integer" } },
+          "variable": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "required": ["preload", "displaySwap", "fallbacks"],
+      "properties": {
+        "preload": { "type": "boolean" },
+        "displaySwap": { "type": "boolean" },
+        "fallbacks": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,19 @@
+engine: 05_MOTION
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: motionTokens
+    contract: 05_MOTION/contracts/motion-tokens.schema.json
+  - id: reducedMotionPolicy
+    contract: 05_MOTION/contracts/reduced-motion.schema.json
+  - id: viewTransitionsPlan
+    contract: 05_MOTION/contracts/view-transitions.schema.json
+exports: []

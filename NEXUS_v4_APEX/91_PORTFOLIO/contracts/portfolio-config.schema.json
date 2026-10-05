@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PortfolioConfig",
+  "type": "object",
+  "required": ["engine", "version", "routes", "navMaxItems"],
+  "properties": {
+    "engine": { "type": "string", "const": "91_PORTFOLIO" },
+    "version": { "type": "string" },
+    "navMaxItems": { "type": "integer", "const": 5 },
+    "routes": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}
+

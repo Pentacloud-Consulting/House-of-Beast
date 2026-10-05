@@ -1,0 +1,10 @@
+engine: 0P_PLUGINS
+purpose: "Wrap optional external tools with health checks and native fallbacks."
+rules:
+  - "Never hard-require plugins."
+  - "Record plugin-fallback events when using native-lite."
+plugins:
+  - caveman
+  - codeReviewGraph
+  - claudeCapsuleKit
+

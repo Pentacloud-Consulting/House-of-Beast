@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BlockEvents",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["rule", "severity", "at", "detail"],
+    "properties": {
+      "rule": { "type": "string" },
+      "severity": { "type": "string", "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"] },
+      "at": { "type": "string" },
+      "detail": { "type": "string" },
+      "file": { "type": "string" }
+    },
+    "additionalProperties": false
+  }
+}
+

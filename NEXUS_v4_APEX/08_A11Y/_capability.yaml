@@ -1,0 +1,9 @@
+engine: 08_A11Y
+purpose: "Accessibility engine: WCAG 2.2, keyboard/focus, ARIA patterns, live regions, a11y CI guidance."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

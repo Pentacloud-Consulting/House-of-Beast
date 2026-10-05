@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ABTestingPlan",
+  "type": "object",
+  "required": ["engine", "version", "hypothesis", "mde", "significance", "durationDays", "variants"],
+  "properties": {
+    "engine": { "type": "string", "const": "02_INSIGHT" },
+    "version": { "type": "string" },
+    "hypothesis": { "type": "string" },
+    "mde": { "type": "number", "minimum": 0 },
+    "significance": { "type": "number", "minimum": 0.9, "maximum": 0.999 },
+    "durationDays": { "type": "integer", "minimum": 14 },
+    "variants": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

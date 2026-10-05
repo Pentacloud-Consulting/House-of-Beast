@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentStrategy",
+  "type": "object",
+  "required": ["engine", "version", "strategy", "rollbackRule"],
+  "properties": {
+    "engine": { "type": "string", "const": "19_SHIP" },
+    "version": { "type": "string" },
+    "strategy": { "type": "string", "enum": ["blue-green", "canary"] },
+    "rollbackRule": { "type": "string" },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

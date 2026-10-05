@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AppArchitecture",
+  "type": "object",
+  "required": ["engine", "version", "framework", "router", "structure"],
+  "properties": {
+    "engine": { "type": "string", "const": "09_BUILD" },
+    "version": { "type": "string" },
+    "framework": { "type": "string", "enum": ["nextjs"] },
+    "router": { "type": "string", "enum": ["app"] },
+    "structure": { "type": "array", "items": { "type": "string" }, "minItems": 6 }
+  },
+  "additionalProperties": false
+}
+

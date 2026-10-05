@@ -1,0 +1,19 @@
+engine: 20_OBSERVE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: observabilityPlan
+    contract: 20_OBSERVE/contracts/observability.schema.json
+  - id: rumPlan
+    contract: 20_OBSERVE/contracts/rum.schema.json
+  - id: errorMonitoringPlan
+    contract: 20_OBSERVE/contracts/error-monitoring.schema.json
+exports: []

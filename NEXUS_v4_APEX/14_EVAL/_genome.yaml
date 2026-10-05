@@ -1,0 +1,17 @@
+engine: 14_EVAL
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: evalPlan
+    contract: 14_EVAL/contracts/eval-plan.schema.json
+  - id: goldenSetSchema
+    contract: 14_EVAL/contracts/golden-set.schema.json
+exports: []

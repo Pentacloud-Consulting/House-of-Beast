@@ -1,0 +1,48 @@
+projectVersion: 1
+
+project:
+  name: "Example Commerce"
+  type: ecommerce
+  stack:
+    framework: nextjs
+    router: app
+    language: typescript
+
+brand:
+  colors:
+    primary: "#00C9A7"
+    neutral: "#0B0F14"
+  typography:
+    heading: "Geist"
+    body: "Inter"
+  voice:
+    tone: "clear, confident, helpful"
+
+critical-implementation-rules:
+  - id: cir-001
+    rule: "Never store secrets in the repo (no .env commits)."
+    why: "Prevents accidental credential leaks."
+    scope: repo
+  - id: cir-002
+    rule: "All forms must be keyboard navigable and show inline validation."
+    why: "Accessibility + conversion baseline."
+    scope: web
+
+hermes:
+  approval-mode: per-session
+  review-mode: incremental
+  bulk-approve-low-risk: false
+  auto-revert-on-regression: true
+
+memory:
+  compression:
+    enabled: true
+    mode: caveman
+  store:
+    sqlite: ".nexus/memory.db"
+    fts5: true
+
+seeds: []
+todos: []
+threads: []
+

@@ -1,0 +1,14 @@
+overridable:
+  scalars:
+    - approvalMode
+    - reviewMode
+  arrays-append:
+    - persistent-facts
+locked:
+  - editBoundaries
+
+persistent-facts: []
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []
+

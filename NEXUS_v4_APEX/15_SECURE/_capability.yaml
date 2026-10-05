@@ -1,0 +1,9 @@
+engine: 15_SECURE
+purpose: "Security engine: 11-layer security model, CSP, upload protocol, encryption, audit logs."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

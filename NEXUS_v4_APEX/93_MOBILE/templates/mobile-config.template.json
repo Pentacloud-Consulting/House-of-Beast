@@ -1,0 +1,5 @@
+{
+  "platforms": ["ios", "android"],
+  "notWebNotice": "This engine is native-only (React Native / Expo). For web, use 09_BUILD + 06_LAYOUT."
+}
+

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContrastReport",
+  "type": "object",
+  "required": ["checks"],
+  "properties": {
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["foreground", "background", "ratio", "passesAA"],
+        "properties": {
+          "foreground": { "type": "string" },
+          "background": { "type": "string" },
+          "ratio": { "type": "number" },
+          "passesAA": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TypeTokens",
+  "type": "object",
+  "required": ["engine", "version", "scale", "tokens"],
+  "properties": {
+    "engine": { "type": "string", "const": "04_TYPE" },
+    "version": { "type": "string" },
+    "scale": {
+      "type": "object",
+      "required": ["ratio", "minViewportPx", "maxViewportPx"],
+      "properties": {
+        "ratio": { "type": "number", "minimum": 1.05, "maximum": 1.6 },
+        "minViewportPx": { "type": "integer", "minimum": 320 },
+        "maxViewportPx": { "type": "integer", "minimum": 768 }
+      },
+      "additionalProperties": false
+    },
+    "tokens": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "clamp"],
+        "properties": {
+          "name": { "type": "string" },
+          "clamp": { "type": "string" },
+          "lineHeight": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

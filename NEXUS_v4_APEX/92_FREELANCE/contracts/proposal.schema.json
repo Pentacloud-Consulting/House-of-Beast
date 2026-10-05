@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProposalSpec",
+  "type": "object",
+  "required": ["engine", "version", "pricingModel", "paymentTerms"],
+  "properties": {
+    "engine": { "type": "string", "const": "92_FREELANCE" },
+    "version": { "type": "string" },
+    "pricingModel": { "type": "string", "enum": ["fixed", "hourly", "retainer", "value-based"] },
+    "paymentTerms": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

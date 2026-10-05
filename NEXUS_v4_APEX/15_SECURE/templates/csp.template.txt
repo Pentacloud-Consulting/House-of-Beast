@@ -1,0 +1,14 @@
+# Phase 1: Report-Only (deploy first, observe)
+Content-Security-Policy-Report-Only: default-src 'self';
+  script-src 'self' 'nonce-{NONCE}' 'strict-dynamic';
+  style-src 'self' 'nonce-{NONCE}';
+  img-src 'self' data:;
+  connect-src 'self';
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+  report-uri /csp-report;
+
+# Phase 2: Enforce after reports reviewed
+# Content-Security-Policy: <same directives with enforcement>
+

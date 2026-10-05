@@ -1,0 +1,54 @@
+installedVersion: 1
+mode: pro
+
+# Innovations enabled (tier policy referenced by tier-policy.yaml)
+innovations:
+  tier1_core: true
+  tier2_recommended: true
+  tier3_specialized: false
+
+plugins:
+  caveman:
+    enabled: true
+    versionPin: "latest"
+  codeReviewGraph:
+    enabled: true
+    versionPin: "latest"
+  claudeCapsuleKit:
+    enabled: true
+    versionPin: "latest"
+
+engines:
+  # CORE always present
+  - 00_CORE
+  - 0A_ANTISLOP
+  - 0H_HERMES
+  - 0P_PLUGINS
+  - 90_MEMORY
+  # Domain engines
+  - 01_FORGE
+  - 02_INSIGHT
+  - 03_PALETTE
+  - 04_TYPE
+  - 05_MOTION
+  - 06_LAYOUT
+  - 07_COMPONENTS
+  - 08_A11Y
+  - 09_BUILD
+  - 10_API
+  - 11_DATA
+  - 12_SYNC
+  - 13_AI
+  - 14_EVAL
+  - 15_SECURE
+  - 16_PERFORM
+  - 17_GOVERN
+  - 18_TEST
+  - 19_SHIP
+  - 20_OBSERVE
+  - 21_SEO
+  - 22_GEO
+operators:
+  - 91_PORTFOLIO
+  - 92_FREELANCE
+  - 93_MOBILE

@@ -1,0 +1,19 @@
+engine: 0P_PLUGINS
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 150
+inputs:
+  - id: pluginRegistry
+    contract: 0P_PLUGINS/contracts/plugin-registry.schema.json
+    required: true
+outputs:
+  - id: pluginRegistryEcho
+    contract: 0P_PLUGINS/contracts/plugin-registry.schema.json
+  - id: pluginHealth
+    contract: 0P_PLUGINS/contracts/plugin-health.schema.json
+exports:
+  - id: health
+    via: scripts/plugin-health.mjs

@@ -1,0 +1,22 @@
+engine: 90_MEMORY
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 700
+inputs:
+  - id: projectState
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: sessionLog
+    contract: 90_MEMORY/contracts/session-log.schema.json
+  - id: projectState
+    contract: 90_MEMORY/contracts/project-state.schema.json
+  - id: decisionLog
+    contract: 00_CORE/contracts/decision-log.schema.json
+exports:
+  - id: projectMemory
+    via: scripts/project-memory.mjs
+

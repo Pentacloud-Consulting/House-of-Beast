@@ -1,0 +1,17 @@
+engine: 19_SHIP
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: cicdPipeline
+    contract: 19_SHIP/contracts/cicd.schema.json
+  - id: deploymentStrategy
+    contract: 19_SHIP/contracts/deploy.schema.json
+exports: []

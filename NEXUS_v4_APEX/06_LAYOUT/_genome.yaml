@@ -1,0 +1,19 @@
+engine: 06_LAYOUT
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: viewportUnitPolicy
+    contract: 06_LAYOUT/contracts/viewport-units.schema.json
+  - id: responsiveZones
+    contract: 06_LAYOUT/contracts/zones.schema.json
+  - id: printStylesheetPlan
+    contract: 06_LAYOUT/contracts/print.schema.json
+exports: []

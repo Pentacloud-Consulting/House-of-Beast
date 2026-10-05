@@ -1,0 +1,19 @@
+engine: 11_DATA
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: dataModel
+    contract: 11_DATA/contracts/data-model.schema.json
+  - id: indexingPlan
+    contract: 11_DATA/contracts/indexing.schema.json
+  - id: scalingPlan
+    contract: 11_DATA/contracts/scaling.schema.json
+exports: []

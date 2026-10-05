@@ -1,0 +1,27 @@
+lockVersion: 1
+stack:
+  runtime: node
+  runtimeVersion: ">=20"
+  framework:
+    name: nextjs
+    version: ">=15"
+  language:
+    typescript: true
+  styling:
+    tokens: true
+    colorSpace: OKLCH
+  quality:
+    a11y: wcag-2-2
+    security: owasp-top-10
+    performance: core-web-vitals
+pins:
+  # Used by 0P_PLUGINS (optional) and scripts/quality gates
+  caveman:
+    npm: "caveman"
+    note: "optional; native-lite fallback when missing"
+  codeReviewGraph:
+    pip: "code-review-graph"
+    note: "optional; native-lite fallback when missing"
+  claudeCapsuleKit:
+    npm: "claude-capsule-kit"
+    note: "optional; native-lite fallback when missing"

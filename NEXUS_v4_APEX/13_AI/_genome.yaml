@@ -1,0 +1,17 @@
+engine: 13_AI
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: aiToolContracts
+    contract: 13_AI/contracts/tool-contracts.schema.json
+  - id: ragPlan
+    contract: 13_AI/contracts/rag-plan.schema.json
+exports: []

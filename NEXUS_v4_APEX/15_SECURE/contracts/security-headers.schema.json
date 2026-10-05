@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SecurityHeaders",
+  "type": "object",
+  "required": ["engine", "version", "headers"],
+  "properties": {
+    "engine": { "type": "string", "const": "15_SECURE" },
+    "version": { "type": "string" },
+    "headers": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "value", "why"],
+        "properties": {
+          "name": { "type": "string" },
+          "value": { "type": "string" },
+          "why": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

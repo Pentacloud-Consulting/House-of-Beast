@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReducedMotionPolicy",
+  "type": "object",
+  "required": ["engine", "version", "policy", "replacementStrategy"],
+  "properties": {
+    "engine": { "type": "string", "const": "05_MOTION" },
+    "version": { "type": "string" },
+    "policy": { "type": "string" },
+    "replacementStrategy": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  },
+  "additionalProperties": false
+}
+

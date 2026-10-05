@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AICrawlerPolicy",
+  "type": "object",
+  "required": ["engine", "version", "defaultPolicy", "exceptions"],
+  "properties": {
+    "engine": { "type": "string", "const": "22_GEO" },
+    "version": { "type": "string" },
+    "defaultPolicy": { "type": "string", "enum": ["allow", "block"] },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["userAgent", "policy"],
+        "properties": {
+          "userAgent": { "type": "string" },
+          "policy": { "type": "string", "enum": ["allow", "block", "rate-limit"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

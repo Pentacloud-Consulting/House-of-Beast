@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestingTrophyStrategy",
+  "type": "object",
+  "required": ["engine", "version", "layers"],
+  "properties": {
+    "engine": { "type": "string", "const": "18_TEST" },
+    "version": { "type": "string" },
+    "layers": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["name", "goal"],
+        "properties": {
+          "name": { "type": "string" },
+          "goal": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

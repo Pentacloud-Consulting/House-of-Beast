@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DecisionLog",
+  "type": "object",
+  "required": ["decisions"],
+  "properties": {
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "at", "decision", "confidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "at": { "type": "string" },
+          "decision": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["DEFINITIVE", "RECOMMENDED", "EXPERIMENTAL"] },
+          "src": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

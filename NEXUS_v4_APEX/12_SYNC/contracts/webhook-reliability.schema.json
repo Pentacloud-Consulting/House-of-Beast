@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WebhookReliability",
+  "type": "object",
+  "required": ["engine", "version", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "12_SYNC" },
+    "version": { "type": "string" },
+    "rules": { "type": "array", "items": { "type": "string" }, "minItems": 5 }
+  },
+  "additionalProperties": false
+}
+

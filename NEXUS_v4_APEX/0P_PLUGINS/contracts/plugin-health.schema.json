@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PluginHealth",
+  "type": "object",
+  "required": ["checkedAt", "plugins"],
+  "properties": {
+    "checkedAt": { "type": "string" },
+    "plugins": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["enabled", "status"],
+        "properties": {
+          "enabled": { "type": "boolean" },
+          "status": { "type": "string", "enum": ["ok", "missing", "error"] },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

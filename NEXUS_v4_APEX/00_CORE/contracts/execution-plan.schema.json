@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExecutionPlan",
+  "type": "object",
+  "required": ["phase", "selectedEngines", "contractChain"],
+  "properties": {
+    "phase": {
+      "type": "string",
+      "enum": ["phase0", "phase1", "phase2", "phase3"]
+    },
+    "selectedEngines": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "contractChain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "artifact"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "artifact": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

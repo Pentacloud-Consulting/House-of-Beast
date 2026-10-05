@@ -1,0 +1,9 @@
+engine: 18_TEST
+purpose: "Testing engine: testing trophy, static analysis, visual regression, a11y tests, CI gates."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

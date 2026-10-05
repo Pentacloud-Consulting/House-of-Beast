@@ -1,0 +1,17 @@
+engine: 92_FREELANCE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: clientBrief
+    contract: 92_FREELANCE/contracts/client-brief.schema.json
+  - id: proposalSpec
+    contract: 92_FREELANCE/contracts/proposal.schema.json
+exports: []

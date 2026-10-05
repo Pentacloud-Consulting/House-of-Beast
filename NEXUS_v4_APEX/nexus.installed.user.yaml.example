@@ -1,0 +1,16 @@
+installedUserVersion: 1
+
+# This file is intended to be gitignored in real projects.
+# Use it for personal preferences (mode, token caps, personal defaults).
+
+mode: lite
+
+tokenEfficiency:
+  L2_maxTokens_override: 3500
+
+plugins:
+  caveman:
+    enabled: false
+  codeReviewGraph:
+    enabled: true
+

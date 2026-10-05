@@ -1,0 +1,17 @@
+engine: 12_SYNC
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: syncStrategy
+    contract: 12_SYNC/contracts/sync-strategy.schema.json
+  - id: webhookReliability
+    contract: 12_SYNC/contracts/webhook-reliability.schema.json
+exports: []

@@ -1,0 +1,12 @@
+engine:
+  default-color-space: LCH
+arrays:
+  persistent-facts:
+    - "Brand primary is jade #00C9A7 — use across all surfaces"
+    - "file:_style-reference/ux-ui-rulebook.example.md"
+activation-steps-prepend:
+  - "If brand-tokens.yaml exists in project root, load it"
+activation-steps-append:
+  - "Emit token-coverage report to .nexus/audits/03_PALETTE-coverage.md"
+on-complete:
+  - "Notify 90_MEMORY of any new tokens minted (decision log entry)"

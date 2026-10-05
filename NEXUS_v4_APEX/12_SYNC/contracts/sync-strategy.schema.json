@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SyncStrategy",
+  "type": "object",
+  "required": ["engine", "version", "mode", "offlineQueue", "realtimeNotes"],
+  "properties": {
+    "engine": { "type": "string", "const": "12_SYNC" },
+    "version": { "type": "string" },
+    "mode": { "type": "string", "enum": ["realtime", "polling", "webhooks", "batch"] },
+    "offlineQueue": { "type": "boolean" },
+    "realtimeNotes": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

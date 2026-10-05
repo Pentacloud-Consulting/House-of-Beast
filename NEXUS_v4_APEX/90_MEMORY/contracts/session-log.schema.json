@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SessionLog",
+  "type": "object",
+  "required": ["sessionId", "startedAt", "events"],
+  "properties": {
+    "sessionId": { "type": "string" },
+    "startedAt": { "type": "string" },
+    "events": { "type": "array" }
+  },
+  "additionalProperties": true
+}
+

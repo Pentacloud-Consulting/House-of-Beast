@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A11YChecklist",
+  "type": "object",
+  "required": ["engine", "version", "target", "pour", "checks"],
+  "properties": {
+    "engine": { "type": "string", "const": "08_A11Y" },
+    "version": { "type": "string" },
+    "target": { "type": "string", "enum": ["WCAG_2_2_AA", "WCAG_2_2_AAA"] },
+    "pour": {
+      "type": "object",
+      "required": ["perceivable", "operable", "understandable", "robust"],
+      "properties": {
+        "perceivable": { "type": "array", "items": { "type": "string" } },
+        "operable": { "type": "array", "items": { "type": "string" } },
+        "understandable": { "type": "array", "items": { "type": "string" } },
+        "robust": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "checks": { "type": "array", "items": { "type": "string" }, "minItems": 8 }
+  },
+  "additionalProperties": false
+}
+

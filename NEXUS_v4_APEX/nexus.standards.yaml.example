@@ -1,0 +1,27 @@
+standardsVersion: 1
+web:
+  frameworkDefault: nextjs-app-router
+  renderingDefault: rsc
+  a11y:
+    target: WCAG_2_2_AA
+    keyboardFirst: true
+  security:
+    baseline: OWASP_TOP_10
+    cspRequired: true
+  performance:
+    cwvTargets:
+      lcp_ms: 2500
+      inp_ms: 200
+      cls: 0.1
+  seo:
+    structuredData: true
+  geo:
+    llmsTxt: true
+contracts:
+  strict: true
+  invokeLanguageOnly: true
+tokenEfficiency:
+  progressiveDisclosure:
+    L1_maxTokens: 100
+    L2_maxTokens: 5000
+    L3_onDemand: true

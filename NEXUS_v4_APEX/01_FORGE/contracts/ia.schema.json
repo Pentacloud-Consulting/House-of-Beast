@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InformationArchitecture",
+  "type": "object",
+  "required": ["engine", "version", "sitemap"],
+  "properties": {
+    "engine": { "type": "string", "const": "01_FORGE" },
+    "version": { "type": "string" },
+    "sitemap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "purpose", "primaryKeyword", "funnelStage", "linksTo"],
+        "properties": {
+          "path": { "type": "string" },
+          "purpose": { "type": "string" },
+          "primaryKeyword": { "type": "string" },
+          "funnelStage": { "type": "string" },
+          "linksTo": { "type": "array", "items": { "type": "string" }, "minItems": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "treeTestPrompts": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

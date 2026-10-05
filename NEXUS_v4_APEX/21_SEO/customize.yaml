@@ -1,0 +1,10 @@
+overridable:
+  scalars: []
+  arrays-append:
+    - persistent-facts
+locked: []
+
+persistent-facts: []
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []

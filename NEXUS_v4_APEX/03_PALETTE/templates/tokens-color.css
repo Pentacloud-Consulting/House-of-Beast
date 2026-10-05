@@ -1,0 +1,7 @@
+:root {
+  /* Phase 1 exemplar — real generation happens in Phase 2 */
+  --color-bg: oklch(18% 0.02 250);
+  --color-fg: oklch(96% 0.02 250);
+  --color-primary: oklch(78% 0.14 170);
+}
+

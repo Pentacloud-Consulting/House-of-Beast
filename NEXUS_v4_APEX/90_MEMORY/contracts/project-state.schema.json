@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectState",
+  "type": "object",
+  "required": ["projectVersion", "project"],
+  "properties": {
+    "projectVersion": { "type": "integer" },
+    "project": {
+      "type": "object",
+      "required": ["name", "type"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "brand": { "type": "object" },
+    "critical-implementation-rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "rule", "why", "scope"],
+        "properties": {
+          "id": { "type": "string" },
+          "rule": { "type": "string" },
+          "why": { "type": "string" },
+          "scope": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "hermes": { "type": "object" },
+    "memory": { "type": "object" },
+    "seeds": { "type": "array" },
+    "todos": { "type": "array" },
+    "threads": { "type": "array" }
+  },
+  "additionalProperties": true
+}
+

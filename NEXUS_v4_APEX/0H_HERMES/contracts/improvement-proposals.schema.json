@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ImprovementProposals",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "proposal-id",
+      "proposed-at",
+      "status",
+      "type",
+      "scope",
+      "blocking",
+      "target-file",
+      "reasoning-trace",
+      "proposal-display",
+      "unified-diff"
+    ],
+    "properties": {
+      "proposal-id": { "type": "string" },
+      "proposed-at": { "type": "string" },
+      "status": { "type": "string", "enum": ["pending", "approved", "rejected", "applied", "superseded"] },
+      "type": { "type": "string", "enum": ["append", "amend", "recalibrate"] },
+      "scope": { "type": "string", "enum": ["minor", "moderate", "major"] },
+      "blocking": { "type": "boolean" },
+      "target-file": { "type": "string" },
+      "source-evidence": { "type": "object" },
+      "reasoning-trace": { "type": "object" },
+      "proposal-display": {
+        "type": "object",
+        "required": ["OLD", "NEW", "Rationale"],
+        "properties": {
+          "OLD": { "type": "string" },
+          "NEW": { "type": "string" },
+          "Rationale": { "type": "string" }
+        },
+        "additionalProperties": false
+      },
+      "unified-diff": { "type": "string" }
+    },
+    "additionalProperties": true
+  }
+}
+

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EntityPlan",
+  "type": "object",
+  "required": ["engine", "version", "entities", "evidence"],
+  "properties": {
+    "engine": { "type": "string", "const": "22_GEO" },
+    "version": { "type": "string" },
+    "entities": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+    "evidence": { "type": "array", "items": { "type": "string" }, "minItems": 3 }
+  },
+  "additionalProperties": false
+}
+

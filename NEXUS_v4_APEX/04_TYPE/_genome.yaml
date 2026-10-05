@@ -1,0 +1,17 @@
+engine: 04_TYPE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: typeTokens
+    contract: 04_TYPE/contracts/type-tokens.schema.json
+  - id: fontLoadingPlan
+    contract: 04_TYPE/contracts/font-loading.schema.json
+exports: []

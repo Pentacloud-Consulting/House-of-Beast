@@ -1,0 +1,9 @@
+engine: 03_PALETTE
+purpose: "Generate OKLCH-first color tokens + contrast checks for the project."
+outputs:
+  - "Color token set (semantic + scale)"
+  - "Contrast report (AA baseline)"
+hardRules:
+  - "Prefer OKLCH internally."
+  - "Never hardcode colors in components; use tokens."
+

@@ -1,0 +1,19 @@
+engine: 07_COMPONENTS
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: componentArchitecture
+    contract: 07_COMPONENTS/contracts/component-architecture.schema.json
+  - id: stateModel
+    contract: 07_COMPONENTS/contracts/state-model.schema.json
+  - id: stateMatrices
+    contract: 07_COMPONENTS/contracts/state-matrices.schema.json
+exports: []

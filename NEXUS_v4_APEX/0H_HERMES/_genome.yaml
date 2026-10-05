@@ -1,0 +1,23 @@
+engine: 0H_HERMES
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: sessionLogs
+    contract: 90_MEMORY/contracts/session-log.schema.json
+    required: false
+outputs:
+  - id: proposals
+    contract: 0H_HERMES/contracts/improvement-proposals.schema.json
+  - id: auditLog
+    contract: 0H_HERMES/contracts/audit-log-entry.schema.json
+  - id: effectiveness
+    contract: 0H_HERMES/contracts/effectiveness-tracker.schema.json
+exports:
+  - id: review
+    via: scripts/hermes-review.mjs
+  - id: revert
+    via: scripts/hermes-revert.mjs

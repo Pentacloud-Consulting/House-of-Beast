@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ViewTransitionsPlan",
+  "type": "object",
+  "required": ["engine", "version", "enabled", "sharedElements"],
+  "properties": {
+    "engine": { "type": "string", "const": "05_MOTION" },
+    "version": { "type": "string" },
+    "enabled": { "type": "boolean" },
+    "sharedElements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "selector"],
+        "properties": {
+          "name": { "type": "string" },
+          "selector": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,19 @@
+engine: 21_SEO
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: sitemapsPlan
+    contract: 21_SEO/contracts/sitemaps.schema.json
+  - id: hreflangPlan
+    contract: 21_SEO/contracts/hreflang.schema.json
+  - id: schemaPlan
+    contract: 21_SEO/contracts/structured-data.schema.json
+exports: []

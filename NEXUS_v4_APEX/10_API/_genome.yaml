@@ -1,0 +1,19 @@
+engine: 10_API
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: restApiContract
+    contract: 10_API/contracts/rest-api.schema.json
+  - id: errorEnvelope
+    contract: 10_API/contracts/error-envelope.schema.json
+  - id: graphqlSecurityPlan
+    contract: 10_API/contracts/graphql-security.schema.json
+exports: []

@@ -1,0 +1,124 @@
+# Seeded improvement patterns (R7) — day-1 HERMES material from Bucket-A/B reference patterns.
+# Not auto-applied; proposals must still go through review/apply.
+version: "1.0"
+baselineImprovements:
+  - id: B001
+    pattern: Use JSON-schema contracts for every engine output
+    rationale: Contract-first pipeline prevents drift and enables CI validation
+    source: bucket-b-contract-first
+  - id: B002
+    pattern: Add PATH-05 cross-engine path guard in validators
+    rationale: Prevents fragile ../OtherEngine/ references
+    source: bmad-layer2-path
+  - id: B003
+    pattern: Prefer invoke over read/follow for engine routing copy
+    rationale: REF-03 invocation discipline
+    source: bmad-layer2-ref
+  - id: B004
+    pattern: Record HERMES proposals with OLD/NEW/Rationale blocks
+    rationale: Auditable, minimal ambiguity
+    source: hermes-agent
+  - id: B005
+    pattern: Track proposal effectiveness in effectiveness-tracker
+    rationale: Closes learning loop on applied changes
+    source: bmad-retrospective-shape
+  - id: B006
+    pattern: Run nexus gate before merge (strict validator + tests + final-validate)
+    rationale: Single quality surface
+    source: nexus-apex
+  - id: B007
+    pattern: Keep decision traces in contracts/decisions.log.yaml shape
+    rationale: Innovation #13 traceability
+    source: nexus-apex
+  - id: B008
+    pattern: Use caveman-lite for memory logs when npm caveman absent
+    rationale: Token-efficient logs without hard dependency
+    source: caveman-repo
+  - id: B009
+    pattern: Document plugin fallback in 90_MEMORY on [plugin-fallback]
+    rationale: Observable degradation path
+    source: claude-capsule-shape
+  - id: B010
+    pattern: Prefer native-lite graph.mjs before CGR daemon
+    rationale: Cold-start friendly blast radius
+    source: code-review-graph
+  - id: B011
+    pattern: Add 5-step verify-work after risky changes
+    rationale: Human confirmation for production-impacting work
+    source: get-shit-done
+  - id: B012
+    pattern: Shard oversized resources with scripts/shard.mjs (Tier 3)
+    rationale: Keeps SKILL load predictable
+    source: bmad-shard-doc
+  - id: B013
+    pattern: Maintain resources/index via scripts/index.mjs (Tier 3)
+    rationale: Discoverability of deep files
+    source: bmad-index-docs
+  - id: B014
+    pattern: Use WCAG 2.2 AA as default a11y bar for UI engines
+    rationale: Aligns public web quality expectations
+    source: detailed-info-mod07
+  - id: B015
+    pattern: Pin security headers + CSP template per deploy
+    rationale: Repeatable hardening
+    source: detailed-info-mod08
+  - id: B016
+    pattern: Set CWV budgets in Perform then validate with Observe
+    rationale: Lab + field alignment
+    source: detailed-info-mod09
+  - id: B017
+    pattern: Use hreflang + sitemap index for international routes
+    rationale: Module 10 crawl/link clarity
+    source: detailed-info-mod10
+  - id: B018
+    pattern: Publish llms.txt with canonical citations policy
+    rationale: Module 11 AI surface clarity
+    source: detailed-info-mod11
+  - id: B019
+    pattern: Add idempotency keys to webhook handlers
+    rationale: Sync engine reliability (12_SYNC)
+    source: detailed-info-mod12
+  - id: B020
+    pattern: Version prompts alongside 14_EVAL golden sets
+    rationale: Prevents silent eval drift
+    source: detailed-info-ai-eval
+  - id: B021
+    pattern: Tool contracts explicit in 13_AI (allow-lists)
+    rationale: Safer agentic features
+    source: owasp-llm
+  - id: B022
+    pattern: Use OKLCH for new palettes (03_PALETTE)
+    rationale: Perceptual uniformity for accessible scales
+    source: detailed-info-mod02
+  - id: B023
+    pattern: Prefer fluid type clamps over fixed px ramps (04_TYPE)
+    rationale: Responsive readability
+    source: detailed-info-mod03
+  - id: B024
+    pattern: Honor prefers-reduced-motion in 05_MOTION outputs
+    rationale: Accessible motion defaults
+    source: detailed-info-mod06
+  - id: B025
+    pattern: Label errors + focus management in forms (08_A11Y)
+    rationale: WCAG operable
+    source: detailed-info-mod07
+  - id: B026
+    pattern: Keep API error envelope consistent (10_API)
+    rationale: Client and observability coherence
+    source: detailed-info-mod12
+  - id: B027
+    pattern: Index DB paths in 11_DATA with explicit N+1 checklist
+    rationale: Performance discipline
+    source: detailed-info-mod13
+  - id: B028
+    pattern: Blue-green or canary with rollback runbook (19_SHIP)
+    rationale: Safe delivery
+    source: detailed-info-mod15
+  - id: B029
+    pattern: Sentry + PII scrub before shipping logs (20_OBSERVE)
+    rationale: Privacy-safe ops
+    source: detailed-info-mod15
+  - id: B030
+    pattern: Keep ENGINE_CHEATSHEET one page for router discoverability
+    rationale: Addresses R10 cold-start orientation
+    source: nexus-risk-r10

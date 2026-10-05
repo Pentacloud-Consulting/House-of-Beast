@@ -1,0 +1,18 @@
+overridable:
+  scalars:
+    - default-color-space
+    - elevation-tiers-count
+  arrays-append:
+    - persistent-facts
+  keyed-arrays:
+    - id: harmony-rules
+locked:
+  - oklch-only-doctrine
+  - tokens-color-schema-shape
+
+persistent-facts:
+  - "file:_style-reference/ux-ui-rulebook.example.md"
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []
+

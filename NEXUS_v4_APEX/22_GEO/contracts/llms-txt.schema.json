@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLMsTxtPlan",
+  "type": "object",
+  "required": ["engine", "version", "path", "sections"],
+  "properties": {
+    "engine": { "type": "string", "const": "22_GEO" },
+    "version": { "type": "string" },
+    "path": { "type": "string", "const": "/llms.txt" },
+    "sections": { "type": "array", "items": { "type": "string" }, "minItems": 3 }
+  },
+  "additionalProperties": false
+}
+

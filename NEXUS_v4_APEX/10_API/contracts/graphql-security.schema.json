@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GraphqlSecurityPlan",
+  "type": "object",
+  "required": ["engine", "version", "controls"],
+  "properties": {
+    "engine": { "type": "string", "const": "10_API" },
+    "version": { "type": "string" },
+    "controls": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}
+

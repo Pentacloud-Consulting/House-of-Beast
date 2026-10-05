@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HreflangPlan",
+  "type": "object",
+  "required": ["engine", "version", "locales", "xDefaultRule", "implementation"],
+  "properties": {
+    "engine": { "type": "string", "const": "21_SEO" },
+    "version": { "type": "string" },
+    "locales": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+    "xDefaultRule": { "type": "string" },
+    "implementation": { "type": "string", "enum": ["link-tags", "http-headers", "sitemap"] }
+  },
+  "additionalProperties": false
+}
+

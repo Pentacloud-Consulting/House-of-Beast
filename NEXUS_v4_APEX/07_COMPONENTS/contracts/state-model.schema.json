@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StateModel",
+  "type": "object",
+  "required": ["engine", "version", "local", "lifted", "context", "serverState"],
+  "properties": {
+    "engine": { "type": "string", "const": "07_COMPONENTS" },
+    "version": { "type": "string" },
+    "local": { "type": "array", "items": { "type": "string" } },
+    "lifted": { "type": "array", "items": { "type": "string" } },
+    "context": { "type": "array", "items": { "type": "string" } },
+    "serverState": {
+      "type": "object",
+      "required": ["rule", "recommendedLibraries"],
+      "properties": {
+        "rule": { "type": "string" },
+        "recommendedLibraries": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

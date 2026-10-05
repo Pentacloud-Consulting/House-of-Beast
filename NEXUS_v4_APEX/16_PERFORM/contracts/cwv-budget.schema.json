@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CWVBudget",
+  "type": "object",
+  "required": ["engine", "version", "targets", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "16_PERFORM" },
+    "version": { "type": "string" },
+    "targets": {
+      "type": "object",
+      "required": ["lcp_ms", "inp_ms", "cls"],
+      "properties": {
+        "lcp_ms": { "type": "integer" },
+        "inp_ms": { "type": "integer" },
+        "cls": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "rules": { "type": "array", "items": { "type": "string" }, "minItems": 6 }
+  },
+  "additionalProperties": false
+}
+

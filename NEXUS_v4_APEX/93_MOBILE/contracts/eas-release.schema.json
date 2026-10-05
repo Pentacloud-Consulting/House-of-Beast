@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EASReleasePlan",
+  "type": "object",
+  "required": ["engine", "version", "build", "submit"],
+  "properties": {
+    "engine": { "type": "string", "const": "93_MOBILE" },
+    "version": { "type": "string" },
+    "build": { "type": "string" },
+    "submit": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

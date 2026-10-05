@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResponsiveZones",
+  "type": "object",
+  "required": ["engine", "version", "zones", "componentBreakpointsRule"],
+  "properties": {
+    "engine": { "type": "string", "const": "06_LAYOUT" },
+    "version": { "type": "string" },
+    "zones": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["name", "minWidthPx", "maxWidthPx"],
+        "properties": {
+          "name": { "type": "string" },
+          "minWidthPx": { "type": "integer", "minimum": 0 },
+          "maxWidthPx": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "componentBreakpointsRule": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

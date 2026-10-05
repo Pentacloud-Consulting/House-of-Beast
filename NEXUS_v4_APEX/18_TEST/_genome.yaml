@@ -1,0 +1,17 @@
+engine: 18_TEST
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: testingStrategy
+    contract: 18_TEST/contracts/testing-trophy.schema.json
+  - id: ciQualityGates
+    contract: 18_TEST/contracts/ci-gates.schema.json
+exports: []

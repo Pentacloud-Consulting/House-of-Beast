@@ -1,0 +1,17 @@
+engine: 09_BUILD
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: appArchitecture
+    contract: 09_BUILD/contracts/app-architecture.schema.json
+  - id: buildPlan
+    contract: 09_BUILD/contracts/build-plan.schema.json
+exports: []

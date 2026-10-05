@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CaseStudySpec",
+  "type": "object",
+  "required": ["engine", "version", "sections"],
+  "properties": {
+    "engine": { "type": "string", "const": "91_PORTFOLIO" },
+    "version": { "type": "string" },
+    "sections": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}
+

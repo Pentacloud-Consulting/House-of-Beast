@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StateMatrices",
+  "type": "object",
+  "required": ["engine", "version", "formFieldStates", "dataComponentStates"],
+  "properties": {
+    "engine": { "type": "string", "const": "07_COMPONENTS" },
+    "version": { "type": "string" },
+    "formFieldStates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 5
+    },
+    "dataComponentStates": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 4
+    }
+  },
+  "additionalProperties": false
+}
+

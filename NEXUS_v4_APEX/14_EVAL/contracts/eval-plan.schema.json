@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvalPlan",
+  "type": "object",
+  "required": ["engine", "version", "evalTypes", "judgePolicy", "regressions"],
+  "properties": {
+    "engine": { "type": "string", "const": "14_EVAL" },
+    "version": { "type": "string" },
+    "evalTypes": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+    "judgePolicy": { "type": "string" },
+    "regressions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

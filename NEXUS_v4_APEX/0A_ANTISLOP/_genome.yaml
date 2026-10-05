@@ -1,0 +1,19 @@
+engine: 0A_ANTISLOP
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 600
+inputs:
+  - id: messages
+    contract: 0A_ANTISLOP/contracts/session-events.schema.json
+    required: false
+outputs:
+  - id: sessionEvents
+    contract: 0A_ANTISLOP/contracts/session-events.schema.json
+  - id: blocks
+    contract: 0A_ANTISLOP/contracts/block-events.schema.json
+exports:
+  - id: reviewers
+    via: 0A_ANTISLOP/_subagents/

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IndexingPlan",
+  "type": "object",
+  "required": ["engine", "version", "rules", "nPlusOnePrevention"],
+  "properties": {
+    "engine": { "type": "string", "const": "11_DATA" },
+    "version": { "type": "string" },
+    "rules": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "nPlusOnePrevention": {
+      "type": "object",
+      "required": ["rule", "techniques"],
+      "properties": {
+        "rule": { "type": "string" },
+        "techniques": { "type": "array", "items": { "type": "string" }, "minItems": 2 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

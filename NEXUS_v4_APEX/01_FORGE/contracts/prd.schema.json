@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRD",
+  "type": "object",
+  "required": ["engine", "version", "featureName", "problem", "persona", "nonGoals"],
+  "properties": {
+    "engine": { "type": "string", "const": "01_FORGE" },
+    "version": { "type": "string" },
+    "featureName": { "type": "string" },
+    "problem": { "type": "string" },
+    "persona": {
+      "type": "object",
+      "required": ["primary", "jtbd"],
+      "properties": {
+        "primary": { "type": "string" },
+        "jtbd": { "type": "string" },
+        "intentStage": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "nonGoals": { "type": "array", "items": { "type": "string" } },
+    "decisionTrace": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

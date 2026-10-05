@@ -1,0 +1,5 @@
+engine:
+  elevation-tiers-count: 8
+arrays:
+  persistent-facts:
+    - "Prefer softer neutrals; avoid pure black backgrounds"

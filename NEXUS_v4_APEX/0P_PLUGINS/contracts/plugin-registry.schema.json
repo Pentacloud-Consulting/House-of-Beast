@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PluginRegistry",
+  "type": "object",
+  "required": ["registryVersion", "plugins"],
+  "properties": {
+    "registryVersion": { "type": "integer" },
+    "plugins": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

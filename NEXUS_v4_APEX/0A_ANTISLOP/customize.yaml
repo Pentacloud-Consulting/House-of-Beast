@@ -1,0 +1,13 @@
+overridable:
+  scalars: []
+  arrays-append:
+    - persistent-facts
+locked:
+  - hardBlocks
+  - forbiddenLayer1Terms
+
+persistent-facts: []
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []
+

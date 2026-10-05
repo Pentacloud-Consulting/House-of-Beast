@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EffectivenessTracker",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["proposal-id", "applied-at", "audit-id", "target-file", "reconciliation-window"],
+    "properties": {
+      "proposal-id": { "type": "string" },
+      "applied-at": { "type": "string" },
+      "audit-id": { "type": "string" },
+      "target-file": { "type": "string" },
+      "scope": { "type": "string" },
+      "symptom-class": { "type": "string" },
+      "reconciliation-window": { "type": "integer", "minimum": 1 },
+      "reconciliations": { "type": "array" },
+      "final-verdict": { "type": "string" },
+      "effectiveness-score": { "type": "number", "minimum": 0, "maximum": 1 }
+    },
+    "additionalProperties": true
+  }
+}
+

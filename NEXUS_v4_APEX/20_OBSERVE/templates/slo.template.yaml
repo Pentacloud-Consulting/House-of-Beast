@@ -1,0 +1,11 @@
+slo:
+  name: "homepage-availability"
+  target: 0.995
+  window: "28d"
+  sli:
+    kind: "availability"
+    good:
+      http_status: [200, 204, 301, 302]
+    total:
+      http_status: "*"
+

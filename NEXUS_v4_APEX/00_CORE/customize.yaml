@@ -1,0 +1,13 @@
+overridable:
+  scalars:
+    - modeDefault
+  arrays-append:
+    - persistent-facts
+locked:
+  - routingMatrixCore
+
+persistent-facts: []
+activation-steps-prepend: []
+activation-steps-append: []
+on-complete: []
+

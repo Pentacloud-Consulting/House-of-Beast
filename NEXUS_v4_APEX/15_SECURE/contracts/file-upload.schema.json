@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FileUploadProtocol",
+  "type": "object",
+  "required": ["engine", "version", "maxBytes", "allowedTypes", "storage", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "15_SECURE" },
+    "version": { "type": "string" },
+    "maxBytes": { "type": "integer", "minimum": 1 },
+    "allowedTypes": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "storage": { "type": "string" },
+    "rules": { "type": "array", "items": { "type": "string" }, "minItems": 6 }
+  },
+  "additionalProperties": false
+}
+

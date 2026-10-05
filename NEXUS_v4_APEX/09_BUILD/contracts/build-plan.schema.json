@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildPlan",
+  "type": "object",
+  "required": ["engine", "version", "phases", "dependencies"],
+  "properties": {
+    "engine": { "type": "string", "const": "09_BUILD" },
+    "version": { "type": "string" },
+    "phases": { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+    "dependencies": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

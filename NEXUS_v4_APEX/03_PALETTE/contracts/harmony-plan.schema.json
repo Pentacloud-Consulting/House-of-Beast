@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HarmonyPlan",
+  "type": "object",
+  "required": ["engine", "version", "harmonyType", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "03_PALETTE" },
+    "version": { "type": "string" },
+    "harmonyType": {
+      "type": "string",
+      "enum": ["monochromatic", "analogous", "complementary", "split-complementary", "triadic"]
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "weight", "note"],
+        "properties": {
+          "id": { "type": "string" },
+          "weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

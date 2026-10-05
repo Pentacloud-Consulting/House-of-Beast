@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HermesAuditLogEntry",
+  "type": "object",
+  "required": ["audit-id", "applied-at", "proposal-id", "approval-mode", "target-file", "diff-applied"],
+  "properties": {
+    "audit-id": { "type": "string" },
+    "applied-at": { "type": "string" },
+    "proposal-id": { "type": "string" },
+    "approved-by": { "type": "string" },
+    "approval-mode": { "type": "string" },
+    "target-file": { "type": "string" },
+    "diff-applied": { "type": "string" },
+    "reverter": { "type": "string" }
+  },
+  "additionalProperties": true
+}
+

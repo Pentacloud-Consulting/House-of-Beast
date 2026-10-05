@@ -1,0 +1,21 @@
+@media print {
+  nav, header, footer, video, iframe, .no-print {
+    display: none !important;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  body {
+    color: #000 !important;
+    background: #fff !important;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+  }
+  .card, article {
+    break-inside: avoid;
+  }
+}
+

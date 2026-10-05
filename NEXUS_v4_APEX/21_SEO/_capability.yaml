@@ -1,0 +1,9 @@
+engine: 21_SEO
+purpose: "SEO engine: crawlability, sitemaps, schema per page-type, pillar clusters, international SEO."
+whenToInvoke:
+  - "Invoke when this domain is needed."
+provides:
+  - "Emits a primary contract artifact."
+hardRules:
+  - "Use invoke language (REF-03)."
+  - "No cross-engine internal path references (PATH-05)."

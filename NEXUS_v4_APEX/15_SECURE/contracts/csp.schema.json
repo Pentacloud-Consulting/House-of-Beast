@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CspPlan",
+  "type": "object",
+  "required": ["engine", "version", "mode", "directives", "noUnsafeInline", "noUnsafeEval"],
+  "properties": {
+    "engine": { "type": "string", "const": "15_SECURE" },
+    "version": { "type": "string" },
+    "mode": { "type": "string", "enum": ["report-only", "enforce"] },
+    "directives": { "type": "array", "items": { "type": "string" }, "minItems": 6 },
+    "noUnsafeInline": { "type": "boolean" },
+    "noUnsafeEval": { "type": "boolean" },
+    "reportUri": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

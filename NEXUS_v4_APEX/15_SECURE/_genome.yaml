@@ -1,0 +1,19 @@
+engine: 15_SECURE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 900
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: securityHeaders
+    contract: 15_SECURE/contracts/security-headers.schema.json
+  - id: cspPlan
+    contract: 15_SECURE/contracts/csp.schema.json
+  - id: fileUploadProtocol
+    contract: 15_SECURE/contracts/file-upload.schema.json
+exports: []

@@ -1,0 +1,21 @@
+engine: 00_CORE
+version: 0.1.0
+modeSupport:
+  - lite
+  - pro
+  - apex
+tokenBudget: 480
+inputs:
+  - id: projectContext
+    contract: 90_MEMORY/contracts/project-state.schema.json
+    required: false
+outputs:
+  - id: executionPlan
+    contract: 00_CORE/contracts/execution-plan.schema.json
+  - id: decisionLog
+    contract: 00_CORE/contracts/decision-log.schema.json
+exports:
+  - id: validateContracts
+    via: scripts/validate-contracts.mjs
+  - id: gate
+    via: scripts/nexus-gate.mjs

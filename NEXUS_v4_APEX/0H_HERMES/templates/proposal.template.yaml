@@ -1,0 +1,9 @@
+proposals:
+  - id: "<id>"
+    scope: "minor|moderate|major"
+    blocking: false
+    file: "<path>"
+    old: "<old>"
+    new: "<new>"
+    rationale: "<why>"
+

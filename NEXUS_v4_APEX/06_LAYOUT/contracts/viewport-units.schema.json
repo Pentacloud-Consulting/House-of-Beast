@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ViewportUnitPolicy",
+  "type": "object",
+  "required": ["engine", "version", "rules"],
+  "properties": {
+    "engine": { "type": "string", "const": "06_LAYOUT" },
+    "version": { "type": "string" },
+    "rules": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["unit", "when", "useFor", "warning"],
+        "properties": {
+          "unit": { "type": "string" },
+          "when": { "type": "string" },
+          "useFor": { "type": "string" },
+          "warning": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

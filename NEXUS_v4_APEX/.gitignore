@@ -1,0 +1,4 @@
+.nexus/
+nexus.installed.user.yaml
+nexus.custom/*.user.yaml
+**/*.user.yaml

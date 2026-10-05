@@ -1,0 +1,18 @@
+engine: 0H_HERMES
+purpose: "Diff-based self-improvement with explicit approval, auditability, and effectiveness tracking."
+editBoundaries:
+  allow:
+    - "*/resources/failure-modes.md"
+    - "*/resources/anti-patterns.md"
+    - "00_CORE/resources/routing-matrix.md"
+    - "*/_genome.yaml (confidence tier fields only)"
+    - "0H_HERMES/contracts/* (HERMES-owned state)"
+  deny:
+    - "*/SKILL.md"
+    - "*/contracts/*.schema.json"
+    - "*/templates/*"
+approval:
+  menu: [Approve, Edit, Skip, Reject, Discuss]
+  haltRule: STEP-04
+learning:
+  effectivenessWindowSessions: 5

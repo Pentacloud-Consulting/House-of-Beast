@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClientBrief",
+  "type": "object",
+  "required": ["engine", "version", "company", "problem", "successCriteria", "scopeIn", "scopeOut"],
+  "properties": {
+    "engine": { "type": "string", "const": "92_FREELANCE" },
+    "version": { "type": "string" },
+    "company": { "type": "string" },
+    "problem": { "type": "string" },
+    "successCriteria": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "scopeIn": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "scopeOut": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+  },
+  "additionalProperties": false
+}
+

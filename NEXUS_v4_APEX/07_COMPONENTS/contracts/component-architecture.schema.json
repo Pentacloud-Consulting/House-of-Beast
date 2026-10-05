@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ComponentArchitecture",
+  "type": "object",
+  "required": ["engine", "version", "tokenTiers", "slotArchitecture", "sizeLimits"],
+  "properties": {
+    "engine": { "type": "string", "const": "07_COMPONENTS" },
+    "version": { "type": "string" },
+    "tokenTiers": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "slotArchitecture": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 3
+    },
+    "sizeLimits": {
+      "type": "object",
+      "required": ["maxLinesPerFile"],
+      "properties": {
+        "maxLinesPerFile": { "type": "integer", "minimum": 50, "maximum": 400 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

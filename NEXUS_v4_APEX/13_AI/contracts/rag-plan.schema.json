@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RagPlan",
+  "type": "object",
+  "required": ["engine", "version", "sources", "chunking", "retrieval", "guardrails"],
+  "properties": {
+    "engine": { "type": "string", "const": "13_AI" },
+    "version": { "type": "string" },
+    "sources": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "chunking": { "type": "string" },
+    "retrieval": { "type": "string" },
+    "guardrails": { "type": "array", "items": { "type": "string" }, "minItems": 2 }
+  },
+  "additionalProperties": false
+}
+

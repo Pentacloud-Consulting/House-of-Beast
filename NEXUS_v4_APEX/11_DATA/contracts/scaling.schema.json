@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DbScalingPlan",
+  "type": "object",
+  "required": ["engine", "version", "patterns", "connectionPooling"],
+  "properties": {
+    "engine": { "type": "string", "const": "11_DATA" },
+    "version": { "type": "string" },
+    "patterns": { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+    "connectionPooling": {
+      "type": "object",
+      "required": ["tool", "formula"],
+      "properties": {
+        "tool": { "type": "string" },
+        "formula": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+
