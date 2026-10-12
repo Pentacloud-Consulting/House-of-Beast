@@ -117,8 +117,8 @@ export function SectionSocialFeed() {
           <h2 className="font-heading text-3xl sm:text-5xl font-black uppercase tracking-tight text-white flex items-center gap-3">
             <span>LIVE FROM THE BEAT</span>
             <span className="relative flex h-3.5 w-3.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[--mint] opacity-75" />
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[--mint]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#76EDBB] opacity-75" />
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#76EDBB]" />
             </span>
           </h2>
         </div>
@@ -156,7 +156,7 @@ export function SectionSocialFeed() {
       {/* Bottom Cue */}
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-neutral-500 uppercase tracking-widest z-10 pt-2 border-t border-neutral-900">
         <span>HORIZONTAL SONIC DISPATCHES</span>
-        <span className="text-[--mint]">03 / 08</span>
+        <span className="text-[#76EDBB]">03 / 08</span>
       </div>
 
       {/* Fullscreen Vertical Story Modal */}
@@ -173,7 +173,7 @@ export function SectionSocialFeed() {
             <button
               onClick={() => setActiveStory(null)}
               aria-label="Close story viewer"
-              className="absolute top-6 right-6 z-50 p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white font-mono text-sm hover:border-[--mint]"
+              className="absolute top-6 right-6 z-50 p-3 rounded-full bg-neutral-900 border border-neutral-800 text-white font-mono text-sm hover:border-[#76EDBB]"
             >
               ✕
             </button>
@@ -185,7 +185,7 @@ export function SectionSocialFeed() {
                 {feedItems.map((_, i) => (
                   <div key={i} className="h-1 flex-1 bg-white/20 rounded-full overflow-hidden">
                     <div
-                      className={`h-full bg-[--mint] transition-all duration-300 ${
+                      className={`h-full bg-[#76EDBB] transition-all duration-300 ${
                         i < activeStoryIndex ? "w-full" : i === activeStoryIndex ? "w-full animate-pulse" : "w-0"
                       }`}
                     />
@@ -226,14 +226,14 @@ export function SectionSocialFeed() {
                   <img
                     src={activeStory.userAvatar}
                     alt={activeStory.username}
-                    className="w-8 h-8 rounded-full object-cover border border-[--mint]"
+                    className="w-8 h-8 rounded-full object-cover border border-[#76EDBB]"
                   />
                   <div>
                     <div className="font-heading font-bold text-sm text-white">{activeStory.username}</div>
                     <div className="font-mono text-[10px] text-neutral-400">{activeStory.timestamp}</div>
                   </div>
                 </div>
-                <Logo size={24} className="text-[--mint]" />
+                <Logo size={24} className="text-[#76EDBB]" />
               </div>
 
               {/* Bottom Details */}
@@ -241,7 +241,7 @@ export function SectionSocialFeed() {
                 <p className="text-sm font-sans text-white leading-relaxed drop-shadow-md">
                   {activeStory.caption}
                 </p>
-                <div className="flex items-center justify-between pt-3 border-t border-white/10 font-mono text-xs text-[--mint]">
+                <div className="flex items-center justify-between pt-3 border-t border-white/10 font-mono text-xs text-[#76EDBB]">
                   <span>♥ {activeStory.likes} LIKES</span>
                   <span>{activeStory.location}</span>
                 </div>

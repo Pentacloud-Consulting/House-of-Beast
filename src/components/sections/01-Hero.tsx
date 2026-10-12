@@ -1,67 +1,51 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Logo } from "@/components/ui/Logo";
 import { SplitText } from "@/components/ui/SplitText";
 import { Marquee } from "@/components/ui/Marquee";
 import { useMousePosition } from "@/hooks/useMousePosition";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export function SectionHero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const mediaContainerRef = useRef<HTMLDivElement | null>(null);
   const textContentRef = useRef<HTMLDivElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isAudioActive, setIsAudioActive] = React.useState(false);
   const mouse = useMousePosition();
-  const prefersReduced = useReducedMotion();
 
+  // Try autoplay muted video on mount
   useEffect(() => {
-    if (prefersReduced || !sectionRef.current || !mediaContainerRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Pin hero section and ensure animation completes before next section starts
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=100%", // Complete pinning scroll distance
-          scrub: 0.8,
-          pin: true,
-          pinSpacing: true // Ensures next section waits until hero animation finishes
-        }
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {
+        // Autoplay may be restricted until user interaction
       });
+    }
+  }, []);
 
-      // 1. Scale down media background into card
-      timeline.to(mediaContainerRef.current, {
-        scale: 0.82,
-        borderRadius: "2rem",
-        filter: "brightness(0.4)",
-        ease: "power2.inOut",
-        duration: 1
-      });
+  // Toggle video audio when clicking anywhere on hero section screen
+  const handleHeroClick = (e: React.MouseEvent) => {
+    // Don't trigger if clicked on interactive child buttons or links (if any)
+    const target = e.target as HTMLElement;
+    if (target.closest("button, a, [role='button']")) {
+      return;
+    }
 
-      // 2. Animate hero text upwards and fade out
-      if (textContentRef.current) {
-        timeline.to(
-          textContentRef.current,
-          {
-            y: -140,
-            opacity: 0,
-            ease: "power2.in",
-            duration: 0.9
-          },
-          0
-        );
-      }
-    }, sectionRef);
+    const video = videoRef.current;
+    if (!video) return;
 
-    return () => ctx.revert();
-  }, [prefersReduced]);
+    if (video.muted) {
+      video.muted = false;
+      video.play().then(() => {
+        setIsAudioActive(true);
+      }).catch(() => {});
+    } else {
+      video.muted = true;
+      setIsAudioActive(false);
+    }
+  };
 
   // Subtle mouse parallax effect on text
   const parallaxX = mouse.normalizedX * 12;
@@ -71,26 +55,28 @@ export function SectionHero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-black text-white flex flex-col justify-between select-none"
+      onClick={handleHeroClick}
+      className="relative w-full h-screen overflow-hidden bg-black text-white flex flex-col justify-between select-none cursor-pointer"
     >
-      {/* Background Media Container with poster & fallback video */}
+      {/* Background Media Container with local video */}
       <div
         ref={mediaContainerRef}
-        className="absolute inset-0 w-full h-full overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 transform-gpu z-0"
+        className="absolute inset-0 w-full h-full overflow-hidden bg-black z-0"
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920&auto=format&fit=crop"
-          className="w-full h-full object-cover grayscale contrast-125 opacity-40 mix-blend-luminosity"
+          preload="auto"
+          className="w-full h-full object-cover opacity-100"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-party-lights-in-a-nightclub-43308-large.mp4" type="video/mp4" />
+          <source src="/videos/HOB%20BG%20VIDEO.mp4" type="video/mp4" />
+          <source src="/videos/HOB BG VIDEO.mp4" type="video/mp4" />
         </video>
-        {/* Dark Vignette Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60 pointer-events-none" />
+        {/* Minimal gradient only at top/bottom for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40 pointer-events-none" />
       </div>
 
       {/* Hero Header Space (Laptop responsive padding & text) */}
@@ -106,7 +92,7 @@ export function SectionHero() {
       {/* Center Content: Floating Logo & Compact Laptop-Responsive Headline */}
       <div
         ref={textContentRef}
-        className="relative z-10 my-auto px-6 sm:px-12 max-w-5xl lg:max-w-6xl mx-auto text-center flex flex-col items-center justify-center transform-gpu"
+        className="relative z-10 my-auto px-6 sm:px-12 max-w-5xl lg:max-w-6xl mx-auto text-center flex flex-col items-center justify-center transform-gpu pointer-events-none"
         style={{
           transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0)`
         }}
@@ -129,7 +115,7 @@ export function SectionHero() {
       </div>
 
       {/* Bottom Hashtag Marquee */}
-      <div className="relative z-10 pb-6 lg:pb-8 border-t border-white/10 bg-black/40 backdrop-blur-md pt-3 lg:pt-4">
+      <div className="relative z-10 pb-6 lg:pb-8 border-t border-white/10 bg-black/40 backdrop-blur-md pt-3 lg:pt-4 pointer-events-none">
         <Marquee speed={1.2} className="font-mono text-[10px] sm:text-xs tracking-widest text-[--mint] uppercase">
           <span className="mx-6">#FINDTHEBEAT</span>
           <span className="text-white">✦</span>

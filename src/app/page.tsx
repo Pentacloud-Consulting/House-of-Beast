@@ -21,7 +21,7 @@ export default function Home() {
       <Preloader onComplete={() => setIsPreloaderComplete(true)} />
 
       {/* Main Experience Flow */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-x-clip">
         {/* Section 1: Hero */}
         <SectionHero />
 

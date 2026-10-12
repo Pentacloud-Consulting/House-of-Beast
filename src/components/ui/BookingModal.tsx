@@ -142,7 +142,7 @@ export function BookingModal({ event, onClose }: BookingModalProps) {
                   <MagneticButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[--mint] text-black hover:bg-white py-4 rounded-xl font-heading font-black text-sm tracking-wider"
+                    className="w-full bg-[#76EDBB] text-black hover:bg-white py-4 rounded-xl font-heading font-black text-sm tracking-wider shadow-[0_0_20px_rgba(118,237,187,0.35)] transition-all duration-300"
                   >
                     {isSubmitting ? "ENCRYPTING PASS..." : "CONFIRM RESERVATION"}
                   </MagneticButton>
