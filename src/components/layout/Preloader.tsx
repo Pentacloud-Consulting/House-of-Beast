@@ -42,7 +42,6 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
   const handleTapToEnter = async () => {
     sessionStorage.setItem("hob_entered", "true");
-    await startAudio();
     setIsDismissed(true);
     onComplete();
   };

@@ -7,7 +7,6 @@ import { Equalizer } from "@/components/ui/Equalizer";
 export function AudioPlayer() {
   const { isPlaying, isMuted, currentTrack, togglePlay, toggleMute, audioLevels, hasStarted } = useAudio();
 
-  if (!hasStarted) return null;
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-8 sm:translate-x-0 z-40 flex items-center gap-4 bg-black/90 backdrop-blur-xl border border-neutral-800 px-4 py-3 rounded-full shadow-2xl text-white pointer-events-auto transition-transform duration-300 hover:scale-105">

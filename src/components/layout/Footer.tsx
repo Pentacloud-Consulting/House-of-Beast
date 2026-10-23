@@ -60,19 +60,26 @@ export function Footer() {
 
         {/* Interactive Giant Wordmark */}
         <div className="my-12 text-center select-none overflow-hidden py-4">
-          <div className="inline-flex justify-center flex-wrap gap-1 sm:gap-2">
-            {wordmark.split("").map((char, idx) => (
-              <span
-                key={idx}
-                onMouseEnter={() => setHoveredLetter(idx)}
-                onMouseLeave={() => setHoveredLetter(null)}
-                style={{
-                  transform: hoveredLetter === idx ? "translateY(-12px) scale(1.15)" : "translateY(0) scale(1)",
-                  color: hoveredLetter === idx ? "#76EDBB" : "#FFFFFF"
-                }}
-                className="font-display text-[10vw] sm:text-[11vw] font-black leading-none transition-all duration-200 cursor-pointer inline-block"
-              >
-                {char === " " ? "\u00A0" : char}
+          <div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-10 gap-y-2">
+            {["HOUSE", "OF", "BEATS"].map((word, wordIdx) => (
+              <span key={wordIdx} className="inline-flex whitespace-nowrap">
+                {word.split("").map((char, charIdx) => {
+                  const globalIdx = wordIdx * 10 + charIdx;
+                  return (
+                    <span
+                      key={charIdx}
+                      onMouseEnter={() => setHoveredLetter(globalIdx)}
+                      onMouseLeave={() => setHoveredLetter(null)}
+                      style={{
+                        transform: hoveredLetter === globalIdx ? "translateY(-12px) scale(1.15)" : "translateY(0) scale(1)",
+                        color: hoveredLetter === globalIdx ? "#76EDBB" : "#FFFFFF"
+                      }}
+                      className="font-display text-[8.5vw] sm:text-[9.5vw] font-black leading-none transition-all duration-200 cursor-pointer inline-block"
+                    >
+                      {char}
+                    </span>
+                  );
+                })}
               </span>
             ))}
           </div>

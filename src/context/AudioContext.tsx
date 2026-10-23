@@ -102,6 +102,10 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      if (!audioRef.current.src) {
+        audioRef.current.src = currentTrack.audioUrl || DEFAULT_TRACK.audioUrl!;
+      }
+      setHasStarted(true);
       audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
     }
   };
