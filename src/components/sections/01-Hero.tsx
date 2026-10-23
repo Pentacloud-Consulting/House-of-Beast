@@ -14,15 +14,53 @@ export function SectionHero() {
   const [isAudioActive, setIsAudioActive] = React.useState(false);
   const mouse = useMousePosition();
 
-  // Try autoplay muted video on mount
+  // Try autoplay video with audio enabled
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = true;
-      video.play().catch(() => {
-        // Autoplay may be restricted until user interaction
+    if (!video) return;
+
+    // Set initial state
+    video.muted = false;
+    video
+      .play()
+      .then(() => {
+        setIsAudioActive(true);
+      })
+      .catch((err) => {
+        // Browser policy blocks unmuted autoplay without prior interaction
+        console.warn("Unmuted autoplay blocked by browser policy, falling back to muted till first interaction:", err);
+        video.muted = true;
+        setIsAudioActive(false);
+        video.play().catch(() => {});
+
+        // Unmute automatically on first click/interaction anywhere
+        const enableSoundOnce = () => {
+          if (videoRef.current) {
+            videoRef.current.muted = false;
+            videoRef.current.play().then(() => setIsAudioActive(true)).catch(() => {});
+          }
+          window.removeEventListener("click", enableSoundOnce);
+          window.removeEventListener("keydown", enableSoundOnce);
+          window.removeEventListener("touchstart", enableSoundOnce);
+        };
+
+        window.addEventListener("click", enableSoundOnce, { once: true });
+        window.addEventListener("keydown", enableSoundOnce, { once: true });
+        window.addEventListener("touchstart", enableSoundOnce, { once: true });
       });
-    }
+
+    // Also listen to custom event if preloader or other trigger dispatches it
+    const handleUnmuteEvent = () => {
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+        videoRef.current.play().then(() => setIsAudioActive(true)).catch(() => {});
+      }
+    };
+    window.addEventListener("hob_enter_experience", handleUnmuteEvent);
+
+    return () => {
+      window.removeEventListener("hob_enter_experience", handleUnmuteEvent);
+    };
   }, []);
 
   // Auto mute video when scrolling away from hero section
@@ -94,7 +132,6 @@ export function SectionHero() {
         <video
           ref={videoRef}
           autoPlay
-          muted
           loop
           playsInline
           preload="auto"

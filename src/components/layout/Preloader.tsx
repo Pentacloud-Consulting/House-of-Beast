@@ -42,6 +42,9 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
   const handleTapToEnter = async () => {
     sessionStorage.setItem("hob_entered", "true");
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("hob_enter_experience"));
+    }
     setIsDismissed(true);
     onComplete();
   };
