@@ -22,6 +22,32 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       smoothWheel: true
     });
 
+    // If preloader has not been dismissed yet, stop scrolling
+    const hasEntered = sessionStorage.getItem("hob_entered") === "true";
+    if (!hasEntered) {
+      lenis.stop();
+    }
+
+    const handleEnter = () => {
+      window.scrollTo(0, 0);
+      lenis.scrollTo(0, { immediate: true });
+      lenis.start();
+    };
+
+    window.addEventListener("hob_enter_experience", handleEnter);
+
+    const handleMenuState = (e: Event) => {
+      const customEvent = e as CustomEvent<{ isOpen: boolean }>;
+      if (customEvent.detail?.isOpen) {
+        lenis.stop();
+      } else {
+        if (sessionStorage.getItem("hob_entered") === "true") {
+          lenis.start();
+        }
+      }
+    };
+    window.addEventListener("hob_menu_state", handleMenuState);
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const updateTicker = (time: number) => {
@@ -32,6 +58,8 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      window.removeEventListener("hob_enter_experience", handleEnter);
+      window.removeEventListener("hob_menu_state", handleMenuState);
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };

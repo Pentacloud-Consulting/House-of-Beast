@@ -118,7 +118,7 @@ export function CustomCursor() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50 overflow-hidden select-none"
+      className="pointer-events-none fixed inset-0 z-[999999] overflow-hidden select-none"
       style={{
         opacity: isVisible ? 1 : 0,
         transition: "opacity 0.25s ease-out",
@@ -127,7 +127,7 @@ export function CustomCursor() {
       {/* 1. Precision Center Dot (Instant Tracking - Never lags or covers text) */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 pointer-events-none will-change-transform z-50 flex items-center justify-center transition-opacity duration-150 ${
+        className={`fixed top-0 left-0 pointer-events-none will-change-transform z-[999999] flex items-center justify-center transition-opacity duration-150 ${
           cursorMode === "text" ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -141,7 +141,7 @@ export function CustomCursor() {
       {/* 2. Fluid Trailing Follower Ring (Smooth physics - Delicate and translucent) */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 pointer-events-none will-change-transform z-40 flex items-center justify-center"
+        className="fixed top-0 left-0 pointer-events-none will-change-transform z-[999998] flex items-center justify-center"
       >
         {/* Default Mode: Elegant thin circular reticle */}
         {cursorMode === "default" && (

@@ -49,10 +49,10 @@ export default function RootLayout({
           <SmoothScroll>
             <ScrollProgress />
             <GrainOverlay />
-            <CustomCursor />
             <Navbar />
             <main className="relative z-10">{children}</main>
             <AudioPlayer />
+            <CustomCursor />
           </SmoothScroll>
         </AudioProvider>
       </body>
