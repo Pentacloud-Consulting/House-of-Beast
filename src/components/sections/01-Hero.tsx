@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { SplitText } from "@/components/ui/SplitText";
 import { Marquee } from "@/components/ui/Marquee";
@@ -164,13 +165,119 @@ export function SectionHero() {
           transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0)`
         }}
       >
-        {/* Pulsing B Logo at ~120 BPM */}
+        {/* Pure Clean B Monogram with Liquid Chrome Light Sweep & Musical Beat Pulse */}
         <div
-          className={`mb-4 lg:mb-6 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite] transition-all duration-700 delay-300 ${
+          className={`relative mb-6 lg:mb-8 flex items-center justify-center transition-all duration-700 delay-300 pointer-events-auto ${
             hasEntered ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-50 -translate-y-4"
           }`}
         >
-          <Logo size={54} className="text-[--mint] drop-shadow-[0_0_20px_rgba(118,237,187,0.4)] sm:w-16 sm:h-20 lg:w-14 lg:h-16" />
+          {/* Subtle Ambient Bass Aura behind B */}
+          <motion.div
+            className="absolute w-28 h-28 rounded-full bg-[#76EDBB]/15 blur-2xl pointer-events-none"
+            animate={{
+              scale: [1, 1.35, 1],
+              opacity: [0.25, 0.6, 0.25]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+
+          {/* Pure B Vector with Specular Light Sweep & Subwoofer Pulse */}
+          <motion.div
+            animate={{
+              scale: [1, 1.08, 0.98, 1],
+              filter: [
+                "drop-shadow(0 0 16px rgba(118,237,187,0.35))",
+                "drop-shadow(0 0 32px rgba(118,237,187,0.75))",
+                "drop-shadow(0 0 16px rgba(118,237,187,0.35))"
+              ]
+            }}
+            transition={{
+              scale: {
+                duration: 1.8,
+                repeat: Infinity,
+                times: [0, 0.16, 0.4, 1],
+                ease: [0.25, 1, 0.5, 1]
+              },
+              filter: {
+                duration: 1.8,
+                repeat: Infinity,
+                times: [0, 0.16, 1],
+                ease: "easeInOut"
+              }
+            }}
+            whileHover={{ scale: 1.15, transition: { duration: 0.25 } }}
+            className="relative cursor-pointer"
+          >
+            <svg
+              width="64"
+              height="74"
+              viewBox="0 0 100 115"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block"
+              aria-label="House of Beats B Logo"
+            >
+              <defs>
+                {/* Dynamic Base Metallic Gradient */}
+                <linearGradient id="heroBGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FFFFFF" />
+                  <stop offset="35%" stopColor="#76EDBB" />
+                  <stop offset="70%" stopColor="#4AE3A5" />
+                  <stop offset="100%" stopColor="#FFFFFF" />
+                </linearGradient>
+
+                {/* Light Sweep Glint Gradient */}
+                <linearGradient id="sweepGlint" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="white" stopOpacity="0" />
+                  <stop offset="50%" stopColor="white" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="white" stopOpacity="0" />
+                </linearGradient>
+
+                {/* Stencil Mask of clean B */}
+                <mask id="heroBMask">
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 5H60C78 5 90 14 90 29C90 39.5 83 48 72 52.5C86 57 95 67 95 83C95 100 81 110 60 110H10V5ZM35 25V43H56C64 43 69 39 69 34C69 29 64 25 56 25H35ZM35 65V90H60C69 90 74 85 74 77.5C74 70 69 65 60 65H35Z"
+                    fill="white"
+                  />
+                </mask>
+              </defs>
+
+              {/* Base Clean B Silhouette */}
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M10 5H60C78 5 90 14 90 29C90 39.5 83 48 72 52.5C86 57 95 67 95 83C95 100 81 110 60 110H10V5ZM35 25V43H56C64 43 69 39 69 34C69 29 64 25 56 25H35ZM35 65V90H60C69 90 74 85 74 77.5C74 70 69 65 60 65H35Z"
+                fill="url(#heroBGradient)"
+              />
+
+              {/* Specular Liquid Chrome Beam sweeping across B in continuous loop */}
+              <g mask="url(#heroBMask)">
+                <motion.rect
+                  x="-90"
+                  y="-10"
+                  width="45"
+                  height="140"
+                  fill="url(#sweepGlint)"
+                  animate={{
+                    x: [-90, 160]
+                  }}
+                  transition={{
+                    duration: 2.2,
+                    repeat: Infinity,
+                    repeatDelay: 0.6,
+                    ease: [0.4, 0, 0.2, 1]
+                  }}
+                  transform="skewX(-25)"
+                />
+              </g>
+            </svg>
+          </motion.div>
         </div>
 
         {/* Scaled Didone Display Headline - Responsive for laptops */}

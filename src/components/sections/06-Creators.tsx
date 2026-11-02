@@ -65,9 +65,11 @@ export function SectionCreators() {
             start: "top top",
             end: () => `+=${pinDuration}`,
             scrub: 0.6,
-            pin: pinnedStageRef.current,
+            pin: true,
             pinSpacing: true,
             invalidateOnRefresh: true,
+            anticipatePin: 1,
+            refreshPriority: -1,
             onUpdate: (self) => {
               // As the right list scrolls, dynamically switch active artist based on scroll progress
               const progress = self.progress;
@@ -124,7 +126,7 @@ export function SectionCreators() {
       {/* PINNED STAGE WRAPPER: Contains Header + Dual Console in a single 100vh frame */}
       <div
         ref={pinnedStageRef}
-        className="relative w-full min-h-screen lg:h-screen lg:max-h-screen flex flex-col justify-between pt-6 pb-6 px-6 sm:px-12 overflow-hidden z-10"
+        className="relative w-full h-screen flex flex-col justify-between pt-6 pb-6 px-6 sm:px-12 overflow-hidden z-10"
       >
         {/* TITLE & CITY FILTER (Image 1 - Stays Stitched to top of screen) */}
         <div className="w-full max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/5 flex-shrink-0">

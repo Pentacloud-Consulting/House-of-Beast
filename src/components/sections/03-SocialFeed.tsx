@@ -156,7 +156,7 @@ export function SectionSocialFeed() {
       {/* Bottom Cue */}
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-neutral-500 uppercase tracking-widest z-10 pt-2 border-t border-neutral-900">
         <span>HORIZONTAL SONIC DISPATCHES</span>
-        <span className="text-[#76EDBB]">03 / 08</span>
+        <span className="text-[#76EDBB]">HOB</span>
       </div>
 
       {/* Fullscreen Vertical Story Modal */}

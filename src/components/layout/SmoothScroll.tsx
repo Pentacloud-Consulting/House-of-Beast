@@ -57,9 +57,27 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     gsap.ticker.add(updateTicker);
     gsap.ticker.lagSmoothing(0);
 
+    // Refresh ScrollTrigger after all content (fonts, images) has loaded
+    // This ensures Section 06 pin starts ONLY after Section 05 has fully scrolled past
+    const refreshOnLoad = () => {
+      setTimeout(() => ScrollTrigger.refresh(), 300);
+    };
+
+    if (document.readyState === "complete") {
+      refreshOnLoad();
+    } else {
+      window.addEventListener("load", refreshOnLoad, { once: true });
+    }
+
+    // Also refresh when fonts are ready
+    document.fonts?.ready?.then(() => {
+      setTimeout(() => ScrollTrigger.refresh(), 100);
+    });
+
     return () => {
       window.removeEventListener("hob_enter_experience", handleEnter);
       window.removeEventListener("hob_menu_state", handleMenuState);
+      window.removeEventListener("load", refreshOnLoad);
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };
